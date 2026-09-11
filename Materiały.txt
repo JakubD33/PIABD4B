@@ -1,1 +1,6 @@
-
+logowanie mysql   : mysql -uroot -p
+pokaze baze danych : show databases;
+stworz baze : create databases
+pozyskiwanie zawartosci tabeli : describe
+tworzenie tabeli : create tabel 
+wybór bazy : use (nazwa bazy) 
