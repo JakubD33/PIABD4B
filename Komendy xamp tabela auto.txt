@@ -1,0 +1,17 @@
+SELECT * FROM `auto`WHERE cena > 5000;                      : cena auto powyżej 5 tysięcy 
+SELECT * FROM `auto`WHERE cena > 7000 AND cena < 50000;     : cena miedzy 7 tys a 50 tys 
+SELECT * FROM `auto`WHERE cena >= 7000 AND cena < 50000;    : większe lub rowne 7 tys
+
+SELECT * FROM `auto` where cena Between 10000 and cena 34200 ORDER BY cena DESC limit 3 : krótszy zapis between= pomiędzy 
+
+SELECT * FROM `auto` where cena <> 34200 and cena <> 10000  : ceny nie rowne 34 tys i 10 tys 
+/*nierówny*/;       <> to skrót do nierówny 
+
+SELECT * FROM `auto` where cena <> 34200 and cena <> 10000 ORDER BY cena DESC limit 3  : posortowane malejąco i ceny nie rowne 34 tys i 10 
+/*nierówny za wyjątkiem dwóch 3 rekordy posortowane malejąco - DESC*/; 
+
+
+SELECT * FROM `auto`WHERE kolor between 'A' AND 'C'; /*kolory od A do C*/ : kolor który zaczyna się od a do c 
+
+
+SELECT * FROM `auto`WHERE kolor between 'A' AND 'C'ORDER by typ;
