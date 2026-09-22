@@ -1,0 +1,29 @@
+zadanie 1 wyświetl uczniów mieszkających w łodzi                       SELECT FROM uczniowie where miejscowość ="Łódż"
+
+zad 2 wyświetl uczniów którzy sa z lodxzi i hobby to programowanie     SELECT FROM uczniowie where miejscowość ="Łódż" AND hobby='programowanie';
+
+zad 3 wyświetl uczniów mieszkających w warszawie lub lodzi 
+wyświetl uczniów z trzech wskazanych miejscowości rosnąco alfabetycznie    SELECT FROM uczniowie where miejscowość in ( 'lodz' 'krakow' 'warszawa' ) ORDER BY miejscowość ASC;
+
+zad 4 wyświetl uczniów którzy nie mieszkają w warszawie ani Krakowie       SELECT imie, nazwisko ,miejscowość FROM uczniowie where miejscowość NOT IN ( 'lodz' 'krakow' 'warszawa' ) ORDER BY miejscowość ASC; 
+
+zad5 wyświetl uczniów ktotych nazwisko zaczyna się od ltery K            SELECT FROM uczniowie WHERE nazwisko LIKE- 'K%';
+
+zad6 wyświetl uczniów ktotych nazwisko konczy się na ltery K            SELECT FROM uczniowie WHERE nazwisko LIKE- '%K';
+
+zad 7 wyświetl uczniów ktotych nazwisko konczy i zaczyna  się na ltery K      SELECT FROM uczniowie WHERE nazwisko LIKE- 'K%K';
+
+zad 8  wyświetl uczniów ktotych druga imienia nazwiska to ltery K            SELECT FROM uczniowie WHERE nazwisko LIKE- '_k%';
+
+zad9 wyświetl uczniów ktotych ostatnia lietra to a  a druga to i              SELECT FROM uczniowie WHERE nazwisko LIKE- '_ik%a';
+
+zad10 wyświetl uczniów urodzonych w latach 2007 do 2008                       SELECT FROM uczniowie WHERE data_urodzenia BETWEEN '2007-01-01' AND '2008-12-31';
+
+
+zad 11 wyświetl wszystkie miejscowości bez powtorzen                          SELECT DISTINCT FROM uczniowie;
+
+zad 12  wyświetl wszystkie miejscowości bez powtorzen i posortowane  SELECT DISTINCT miejscowosc FROM uczniowie ORDER BY miejscowość;
+
+zad13 Policz wszystkich uczniów z Łodzi                        SELECT COUNT(*) As chłopaki_fajnie_z_lodzi FROM uczniowie WHERE miejscowość='Łódz';
+
+zad14 wyswitl hobby które wystepuja u co najmniej 10 uczniów  SELECT hobby, COUNT(*) AS liczba_uczniow FROM uczniowie GROUP BY hobby HAVING COUNT (*) >= 10 ORDER BY liczba_uczniow DESC;
