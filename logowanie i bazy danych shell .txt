@@ -1,6 +1,23 @@
 logowanie mysql   : mysql -uroot -p
 pokaze baze danych : show databases;
-stworz baze : create databases
+stworz baze : create databases (nazwa bazy);
 pozyskiwanie zawartosci tabeli : describe
 tworzenie tabeli : create tabel 
 wybór bazy : use (nazwa bazy) 
+jak zobaczyc tabele : show tables;
+jak zobaczyc strukture tabeli : describe (nazwa tabeli)
+co robi kolumna z kluczem głownym :  to kolumna w ktorej sa dane ktore sie nie powtarzają 
+polecenie wylącza serwer : mysqladmin -u root shutdown
+uruchomienie serweera mysql jako samodzielna aplikacje : mysqld --console 
+zatrymanie uslugi : net stop (nazwa uslugi) 
+nawiązanie połaczenia z serwerem : musql -u root --password=hasło / mysql -u root -phasło 
+konczenie połaczenia z serwerwem : quit 
+usuwanie bazy danych : drop database test1;
+wybór bazy : use (nazwa bazy); 
+logowanie do serwera z wyborem bazy : mysql -u (nazwa uzytjownika) -phasło (nazwa bazy) / mysql (nazwa bazy) -u (nazwa uzytkownika) -phasło
+tworzenie uzytkownika z hasłem : create user stachu2 identified by '(hasło)';
+usuwanie konta uzytkownika : drop user stachu
+zmiana nazwy uzytkownika : rename user stachu to stachu_nowy 
+zmiana hasła do konta : set password for (nazwa) = password('nowe hasło')
+nadawanioe praw do konta uzytkownika : GRANT usage    ON*  to (nazwa); 
+zmiana hasła uzytkownika drugi sposob : GRANT usage    ON* TO (nazwa) identified by 'hasło';
