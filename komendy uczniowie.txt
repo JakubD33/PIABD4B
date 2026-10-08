@@ -27,3 +27,15 @@ zad 12  wyświetl wszystkie miejscowości bez powtorzen i posortowane  SELECT DI
 zad13 Policz wszystkich uczniów z Łodzi                        SELECT COUNT(*) As chłopaki_fajnie_z_lodzi FROM uczniowie WHERE miejscowość='Łódz';
 
 zad14 wyswitl hobby które wystepuja u co najmniej 10 uczniów  SELECT hobby, COUNT(*) AS liczba_uczniow FROM uczniowie GROUP BY hobby HAVING COUNT (*) >= 10 ORDER BY liczba_uczniow DESC;
+
+Średnia cena produktu w całym sklepie (AVG)sql
+SELECT AVG(cena) AS srednia_cena FROM produkty;
+
+najdroższy i najtańszy produkt (MIN, MAX)sql
+SELECT MIN(cena) AS najtanszy, MAX(cena) AS najdrozszy FROM produkty;
+
+Łączna wartość towaru w magazynie (SUM z operacją matematyczną)sql
+SELECT SUM(cena * magazyn) AS wartosc_magazynu FROM produkty;
+
+
+
