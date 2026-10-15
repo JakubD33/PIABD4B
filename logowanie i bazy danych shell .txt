@@ -21,3 +21,7 @@ zmiana nazwy uzytkownika : rename user stachu to stachu_nowy
 zmiana hasła do konta : set password for (nazwa) = password('nowe hasło')
 nadawanioe praw do konta uzytkownika : GRANT usage    ON*  to (nazwa); 
 zmiana hasła uzytkownika drugi sposob : GRANT usage    ON* TO (nazwa) identified by 'hasło';
+
+BACKUP DATABASE [NazwaTwojejBazy]
+TO DISK = 'C:\Backupy\moja_baza.bak'
+WITH FORMAT, MEDIANAME = 'SQLServerBackup', NAME = 'Pelny Backup Bazy';
