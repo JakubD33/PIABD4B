@@ -28,6 +28,50 @@ zad13 Policz wszystkich uczniów z Łodzi                        SELECT COUNT(*)
 
 zad14 wyswitl hobby które wystepuja u co najmniej 10 uczniów  SELECT hobby, COUNT(*) AS liczba_uczniow FROM uczniowie GROUP BY hobby HAVING COUNT (*) >= 10 ORDER BY liczba_uczniow DESC;
 
+21 wyswietl imie i nazwisko ucznia w jednej kolumnie         SELECT id, 
+                                                                    Concat(imie, ' ', nazwisko) as uczen 
+                                                             FROM uczniowie;
+
+
+22 wyswietl imiona uczniow wielkimi literami                  SELECT id, 
+                                                                  UPPER(imie) AS imie_duzymi_literami,
+                                                                  nazwisko
+                                                                  FROM uczniowie;
+
+23 wyswietl uczniów urodzonych w czerwcu                      SELECT imie, nazwisko, data_urodzenia 
+                                                              FROM uczniowie
+                                                              WHERE MONTH(data_urodzenia) = 6
+                                                              ORDER BY data_urodzenia;   
+
+
+drugi wariant w czerwcu i grudniu                            SELECT imie, nazwisko, data_urodzenia 
+                                                              FROM uczniowie
+                                                              WHERE MONTH(data_urodzenia) IN (6,12)
+                                                              ORDER BY data_urodzenia;   
+       
+znajdz uczniow urodzonych w czerwcu lub grudniu 
+
+
+oblicz wiek kazdwgo ucznia                                SELECT imie, 
+                                                                 nazwisko,
+                                                                 data_urodzenia,
+                                                                 timestampdiff(
+                                                                    YEAR,
+                                                                    data_urodzenia,
+                                                                    CURDATE()
+                                                                 ) AS wiek
+                                                          FROM uczniowie
+                                                          ORDER BY wiek DESC;
+
+28 wyswuetl najstarszego i najmlodszego ucznia wedlug daty urodzenia         SELECT MIN(data_urodzenia) AS najstarszy,
+                                                                             MAX(data_urodzenia) AS najmlodszy
+                                                                             FROM uczniowie;
+
+31 wyswietl uczniow ktorych imie ma dokldaie 5 liter                         SELECT id, imie,m nazwisko 
+                                                                             FROM uczniowie 
+                                                                             WHERE CHAR_LENGTH(imie) = 5 
+                                                                             ORDER BY imie;
+
 Średnia cena produktu w całym sklepie (AVG)sql
 SELECT AVG(cena) AS srednia_cena FROM produkty;
 
