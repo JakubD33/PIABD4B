@@ -72,6 +72,37 @@ oblicz wiek kazdwgo ucznia                                SELECT imie,
                                                                              WHERE CHAR_LENGTH(imie) = 5 
                                                                              ORDER BY imie;
 
+
+
+
+32 wyswietl trzy ostatnie numery telefonu kazdego uczxnia                   SELECT imie, nazwisko,
+                                                                                   RIGHT(telefon, 3) AS koncowka_telefonu
+                                                                            FROM uczniowie 
+                                                                            ORDER BY nazwisko;
+
+33 wyswietl nazwiska uczniow zaposane malymi literami                       SELECT imie,
+                                                                                   LOWER(nazwisko) AS nazwisko_male_litery
+                                                                             FROM uczniowie;
+34 wyswietl uczniow urodzonych w 1 kwartale roku                        SELECT imie, nazwisko, data_urodzenia
+                                                                        FROM uczniowie
+                                                                        WHERE MONTH(data_urodzenia) BETWEEN 1 AND 3 
+                                                                        ORDER BY data_urodzenia;
+35 wyswietl date urodzenia ucznia w formiacie DD-MM-RRRR                SELECT imie, nazwisko,
+                                                                        DATE_FORMAT(data_urodzenia, '%d-%m-%y')
+                                                                        AS 
+                                                                        FROM uczniowie 
+                                                                        ORDER BY nazwisko;
+
+
+
+
+
+
+
+
+
+
+
 Średnia cena produktu w całym sklepie (AVG)sql
 SELECT AVG(cena) AS srednia_cena FROM produkty;
 
