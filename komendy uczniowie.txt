@@ -93,6 +93,7 @@ oblicz wiek kazdwgo ucznia                                SELECT imie,
                                                                         FROM uczniowie 
                                                                         ORDER BY nazwisko;
 
+zad 3 dodaj ucznia bez podawania id                                    INSERT INTO                               
 
 
 
